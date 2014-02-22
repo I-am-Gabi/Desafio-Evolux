@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                         filename='style.css') }}">
+    </head>
+    <h1>Formou!</h1>
+    
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        <br/>
+    {% endfor %}
+
+    <form action="{{ url_for('formou') }}"
+          method="POST">
+        <label for="id_nome">Nome</label>
+        <input type="text" name="nome" id="id_nome" /> <br />
+        <label for="id_nome">Endereço</label>
+        <input type="text" name="endereco" id="id_endereco" /> <br />
+        <label for="id_nome">Especialidade</label>
+        <input type="text" name="especialidade" id="id_especialidade" /><br />
+        <label for="id_nome">Funcionamento</label>
+        <input type="text" name="funcionamento" id="id_funcionamento" /><br />
+        <input type="submit" value="Enviar">
+    </form>
+</html>
