@@ -22,8 +22,13 @@ def hello():
 def formou():
     form = cgi.FieldStorage()
     if request.method == 'POST':
+<<<<<<< HEAD
         missing = validar()
         if missing:
+=======
+        missing, falta = validar()
+        if falta:
+>>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
             flash("Aviso!\n" + missing)
         else: 
             bar = { 
@@ -33,6 +38,7 @@ def formou():
                 'Horario de abertura': request.form.get('funcionamento_abertura') ,
                 'Horario de funcionamento': request.form.get('funcionamento_fecha') 
                 }
+<<<<<<< HEAD
 
             
             with open("form.txt", "a") as text_file:
@@ -54,6 +60,28 @@ def listar():
     flash(conteudo)
 
     return render_template("lista.html")
+=======
+
+            
+            with open("form.txt", "a") as text_file:
+                text_file.write('\n')
+                text_file.write("BAR\n")
+                for k, v in bar.items(): 
+                    text_file.write("%s: %s" % (k, v))
+                    text_file.write('\n')
+
+    return render_template("form.html")
+
+@app.route("/lista", methods=['GET'])
+def listar():
+    form = cgi.FieldStorage()
+    a = open("arquivo.txt")
+    texto = a.read()
+
+
+    return render_template("lista.html")
+
+>>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
 
 def validar():
     missing = ""
@@ -74,7 +102,11 @@ def validar():
         missing += "O campo horario de fechamento esta em branco.\n"
         mis = True
 
+<<<<<<< HEAD
         return (missing)
+=======
+        return missing, mis
+>>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
 
 
 if __name__ == "__main__":

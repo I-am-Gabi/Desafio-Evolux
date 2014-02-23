@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                          filename='style.css') }}">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" 
     href="{{ url_for('static', 
      				filename='bootstrap.css') }}">
@@ -19,6 +20,17 @@
     <link rel="stylesheet" type="text/css" 
     href="{{ url_for('static', 
                     filename='cover.css') }}">
+=======
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='cover.css') }}">
+>>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
     <title>Desafio Evolux</title> 
   </head>
 
@@ -43,10 +55,15 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">Lista de Bares.</h1> <bt/>
+<<<<<<< HEAD
            		{% for message in get_flashed_messages() %}
                     <div class="" style="width: 450; margin-bottom: 40px;">{{ message }}</div>
                     <br/>
                 {% endfor %}
+=======
+            {{ texto }}
+              <br/>
+>>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
             <p class="lead"> 
               <a href="/form" class="btn btn-lg btn-default">Cadastrar Bar</a>
             </p>
