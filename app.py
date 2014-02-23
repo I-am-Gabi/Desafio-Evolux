@@ -11,31 +11,66 @@ app.config.update({
     'DEBUG': True
 })
 
-@app.route('/<nome>')
-def hello(nome):
-    return "Hello World %s!" % nome
-
-@app.route("/", methods=['GET', 'POST'])
-def formou():
-    if request.method == 'POST':
-        if request.form.get('nome'):
-            salvar()
-        else:
-            flash('Preencha todos os campos')
-
+@app.route('/')
+def hello():
     return render_template("index.html")
 
+@app.route("/form", methods=['GET', 'POST'])
+def formou():
+    form = cgi.FieldStorage()
+    if request.method == 'POST':
+        missing, falta = validar()
+        if falta:
+            flash("Aviso!\n" + missing)
+        else: 
+            bar = { 
+                'Nome': request.form.get('nome') ,
+                'Endereco': request.form.get('endereco') ,
+                'Especialidade': request.form.get('especialidade') ,
+                'Horario de abertura': request.form.get('funcionamento_abertura') ,
+                'Horario de funcionamento': request.form.get('funcionamento_fecha') 
+                }
 
-def salvar():
-    with open("form.txt", "a") as text_file:
-        text_file.write(request.form.get('nome'))
-        text_file.write(request.form.get('\n'))
-        text_file.write(request.form.get('endereco'))
-        text_file.write(request.form.get('\n'))
-        text_file.write(request.form.get('especialidade'))
-        text_file.write(request.form.get('\n'))
-        text_file.write(request.form.get('funcionamento'))
-        text_file.write(request.form.get('\n'))
+            
+            with open("form.txt", "a") as text_file:
+                text_file.write('\n')
+                text_file.write("BAR\n")
+                for k, v in bar.items(): 
+                    text_file.write("%s: %s" % (k, v))
+                    text_file.write('\n')
+
+    return render_template("form.html")
+
+@app.route("/lista", methods=['GET'])
+def listar():
+    form = cgi.FieldStorage()
+    a = open("arquivo.txt")
+    texto = a.read()
+
+
+    return render_template("lista.html")
+
+
+def validar():
+    missing = ""
+    mis = False
+    if not request.form.get('nome'):
+        missing = "O campo nome esta em branco.\n" 
+        mis = True
+    if not request.form.get('endereco'):
+        missing += "O campo endereco esta em branco.\n"
+        mis = True
+    if not request.form.get('especialidade'):
+        missing += "O campo especialidade esta em branco.\n"
+        mis = True
+    if not request.form.get('funcionamento_abertura'):
+        missing += "O campo horario de abertura esta em branco.\n"
+        mis = True
+    if not request.form.get('funcionamento_fecha'):
+        missing += "O campo horario de fechamento esta em branco.\n"
+        mis = True
+
+        return missing, mis
 
 
 if __name__ == "__main__":

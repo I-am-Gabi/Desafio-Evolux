@@ -1,1 +1,108 @@
-werweradfasdfwerweradfasdfasdfadfasdfasdfasdfasdfasdf
+
+
+BAR
+Endereco: sdf
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: adsf
+Nome: sd
+
+
+BAR
+
+BAR
+
+BAR
+
+BAR
+
+BAR
+Endereco: skjf
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: aksdlfj
+Nome: sadlkfj
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: a
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: a
+Nome: a
+
+BAR
+Endereco: 
+Horario de funcionamento: 00:00
+Horario de abertura: 00:59
+Especialidade: 
+Nome: 

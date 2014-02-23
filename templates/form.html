@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                         filename='style.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='cover.css') }}">
+        <script>
+            $(document).ready(function () {
+                $(".tablesorter").tablesorter({ 
+                });
+            });
+            $("#enviar").click(function () {
+                $("#table").show();
+            })
+        </script>
+    </head>
+    <body>
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                      <h3 class="masthead-brand">Desafio Evolux</h3>
+                      <ul class="nav masthead-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/form">Cadastro de Bandas</a></li>
+                        <li><a href="#">Lista de Bandas</a></li>
+                      </ul>
+                    </div>
+                </div>
+
+                <div class="inner cover col-xs-12" style="margin-left: 20%; margin-top: 10%;"> 
+                    <h1 class="cover-heading" style="width: 460; margin-bottom: 40px;">Desafio Evolux.</h1> <bt/>
+                    {% for message in get_flashed_messages() %}
+                        <div class="flash bg-warning" style="width: 450; margin-bottom: 40px;">{{ message }}</div>
+                        <br/>
+                    {% endfor %}
+                    <div>
+                        <form action="{{ url_for('formou') }}"
+                              method="POST" role="form"> 
+                            <div class="form-group col-xs-8">
+                                <label for="id_nome">Nome</label>
+                                <input class="form-control" type="text" name="nome" id="id_nome" placeholder="Nome"/>
+                            </div>        
+                            <div class="form-group col-xs-8">
+                                <label for="id_nome">Endereço</label>
+                                <input class="form-control" type="text" name="endereco" id="id_endereco" placeholder="Esdereço Completo"/> 
+                            </div>
+                            <div class="form-group col-xs-8">
+                                <label for="id_nome">Especialidades</label>
+                                <textarea class="form-control" type="text" name="especialidade" id="id_especialidade" placeholder="Especialidades oferecidas"></textarea>
+                            </div>
+                            <div class="form-group col-xs-8">
+                                <label for="id_nome">Horário de Funcionamento</label> <br/>
+                                Abertura: <input type="time" name="funcionamento_abertura"/> <br/> <br />
+                                Fechamento: <input type="time" name="funcionamento_fecha" />
+                            </div>
+                            <br /> <br /> 
+                            <input class="btn btn-default" type="submit" value="Enviar" id="enviar">
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../static/bootstrap.min.js"></script>
+    <script src="../static/docs.js"></script>
+    </body>
+</html>
