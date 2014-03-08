@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                          filename='style.css') }}">
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" 
     href="{{ url_for('static', 
      				filename='bootstrap.css') }}">
@@ -20,7 +19,7 @@
     <link rel="stylesheet" type="text/css" 
     href="{{ url_for('static', 
                     filename='cover.css') }}">
-=======
+
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                         filename='bootstrap.css') }}">
@@ -30,8 +29,7 @@
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                         filename='cover.css') }}">
->>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
-    <title>Desafio Evolux</title> 
+   <title>Desafio Evolux</title> 
   </head>
 
   <body>
@@ -46,28 +44,47 @@
             <div class="inner">
               <h3 class="masthead-brand">Desafio Evolux</h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="/form">Cadastro de Bandas</a></li>
-                <li><a href="#">Lista de Bandas</a></li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/form">Cadastre seu bar!</a></li>
+                <li><a href="/lista">Lista de Bares</a></li> 
               </ul>
             </div>
           </div>
 
           <div class="inner cover">
             <h1 class="cover-heading">Lista de Bares.</h1> <bt/>
-<<<<<<< HEAD
            		{% for message in get_flashed_messages() %}
                     <div class="" style="width: 450; margin-bottom: 40px;">{{ message }}</div>
                     <br/>
                 {% endfor %}
-=======
-            {{ texto }}
+              {{ texto }}
               <br/>
->>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
+
+            <table class='bar'>
+              <tr>
+                <th>Nome</th>
+                <th>Descricao</th>
+                <th>Endereco</th>
+                <th>Especialidade</th>
+                <th>Telefone</th>
+              </tr>
+              
+              {% for bar in bares %}
+              <tr>
+                <td>{{ bar.nome }}</td>
+                <td>{{ bar.descricao }}</td>
+                <td>{{ bar.endereco }}</td>
+                <td>{{ bar.especialidade }}</td>
+                <td>{{ bar.telefone }}</td>
+              </tr>
+              {% else %}
+                <li><em>Unbelievable.  No entries here so far</em>
+              {% endfor %}
+             
+            </table>
             <p class="lead"> 
               <a href="/form" class="btn btn-lg btn-default">Cadastrar Bar</a>
             </p>
-          </div>
 
           <div class="mastfoot">
             <div class="inner">

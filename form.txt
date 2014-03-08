@@ -139,3 +139,10 @@ Especialidade: asdf
 Nome: asdf
 =======
 >>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
+
+BAR
+Endereco: Test
+Horario de funcionamento: 00:00
+Horario de abertura: 00:00
+Especialidade: t
+Nome: test

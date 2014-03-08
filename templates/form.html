@@ -2,25 +2,13 @@
     <head>
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
-                         filename='style.css') }}">
-        <link rel="stylesheet" type="text/css" 
-        href="{{ url_for('static', 
                         filename='bootstrap.css') }}">
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                         filename='bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
-                        filename='cover.css') }}">
-        <script>
-            $(document).ready(function () {
-                $(".tablesorter").tablesorter({ 
-                });
-            });
-            $("#enviar").click(function () {
-                $("#table").show();
-            })
-        </script>
+                        filename='cover.css') }}"> 
     </head>
     <body>
     <div class="site-wrapper">
@@ -34,44 +22,48 @@
                       <h3 class="masthead-brand">Desafio Evolux</h3>
                       <ul class="nav masthead-nav">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/form">Cadastro de Bandas</a></li>
-<<<<<<< HEAD
-                        <li><a href="/lista">Lista de Bandas</a></li>
-=======
-                        <li><a href="#">Lista de Bandas</a></li>
->>>>>>> 1a7449698ad37b7a1a292559788a3ff3985f5b43
+                        <li><a href="/form">Cadastre seu bar!</a></li>
+                        <li><a href="/lista">Lista de Bares</a></li> 
                       </ul>
                     </div>
                 </div>
 
                 <div class="inner cover col-xs-12" style="margin-left: 20%; margin-top: 10%;"> 
-                    <h1 class="cover-heading" style="width: 460; margin-bottom: 40px;">Desafio Evolux.</h1> <bt/>
+                    <h1 class="cover-heading" style="float:left; width: 460; left: 10px;">Desafio Evolux.</h1> <bt/>
                     {% for message in get_flashed_messages() %}
                         <div class="flash bg-warning" style="width: 450; margin-bottom: 40px;">{{ message }}</div>
                         <br/>
                     {% endfor %}
                     <div>
-                        <form action="{{ url_for('formou') }}"
+                        <form action="{{ url_for('add_bar') }}"
                               method="POST" role="form"> 
                             <div class="form-group col-xs-8">
                                 <label for="id_nome">Nome</label>
                                 <input class="form-control" type="text" name="nome" id="id_nome" placeholder="Nome"/>
                             </div>        
                             <div class="form-group col-xs-8">
-                                <label for="id_nome">Endereço</label>
+                                <label for="id_endereco">Endereço</label>
                                 <input class="form-control" type="text" name="endereco" id="id_endereco" placeholder="Esdereço Completo"/> 
                             </div>
                             <div class="form-group col-xs-8">
-                                <label for="id_nome">Especialidades</label>
+                                <label for="id_especialidade">Especialidades</label>
                                 <textarea class="form-control" type="text" name="especialidade" id="id_especialidade" placeholder="Especialidades oferecidas"></textarea>
                             </div>
                             <div class="form-group col-xs-8">
-                                <label for="id_nome">Horário de Funcionamento</label> <br/>
-                                Abertura: <input type="time" name="funcionamento_abertura"/> <br/> <br />
-                                Fechamento: <input type="time" name="funcionamento_fecha" />
+                                <label for="id_descricao">Descrição</label>
+                                <textarea class="form-control" type="text" name="descricao" id="id_descricao" placeholder="Descrição"></textarea>
                             </div>
-                            <br /> <br /> 
+                            <div class="form-group col-xs-8">
+                                <label for="id_telefone">Telefone</label> 
+                                <input name="telefone" id="id_telefone" type="text" class="phone form-control" placeholder="0000-0000" maxlength="9" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Imagem</label>
+                                <input type="file" id="exampleInputFile"/>
+                            </div>
+                            
                             <input class="btn btn-default" type="submit" value="Enviar" id="enviar">
+                            <a href="/form"><input class="btn btn-default" type="reset" value="Novo Cadastro"></a>
                         </form> 
                     </div>
                 </div>
@@ -79,7 +71,24 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../static/bootstrap.min.js"></script>
-    <script src="../static/docs.js"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='docs.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.mask.js') }}"></script>
+    <script src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+    <script>
+      $(function() {
+          $('.date').mask('00/00/0000');
+          $('.time').mask('00:00:00');
+          $('.date_time').mask('00/00/0000 00:00:00');
+          $('.cep').mask('00000-000');
+          $('.phone').mask('0000-0000');
+          $('.phone_with_ddd').mask('(00) 0000-0000');
+          $('.phone_us').mask('(000) 000-0000');
+          $('.mixed').mask('AAA 000-S0S');
+          $('.ip_address').mask('099.099.099.099');
+          $('.percent').mask('##0,00%', {reverse: true});
+      });
+    </script>
     </body>
 </html>

@@ -19,6 +19,9 @@
         <link rel="stylesheet" type="text/css" 
         href="{{ url_for('static', 
                         filename='cover.css') }}">
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', 
+                        filename='docs.min.css') }}">
     <title>Desafio Evolux</title> 
   </head>
 
@@ -34,50 +37,99 @@
             <div class="inner">
               <h3 class="masthead-brand">Desafio Evolux</h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="/form">Cadastro de Bandas</a></li>
-                <li><a href="#">Lista de Bandas</a></li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/form">Cadastre seu bar!</a></li>
+                <li><a href="/lista">Lista de Bares</a></li> 
               </ul>
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">Desafio Evolux.</h1> <bt/>
-            <h4>Escrever uma aplicação web em Python usando o framework Flask (http://flask.pocoo.org/)</h4>
-              <ol>
-                <li>A aplicação é um cadastro de bares. Crie um formulário de cadastro com os seguintes campos: </li><br/>
-                  <blockquote style="text-align: left; font-size: 12px;">
-                    <p style="font-size: 14px;"> Nome do bar: <br/>
-                    Endereço: <br/>
-                    Horário de Abertura: <br/>
-                    Horário de Abertura: <br/>
-                    Especialidade da Casa: </p>
-                  </blockquote>
-                <li>Ao submeter o formulário, os dados enviados pelo usuário devem ser submetidos via POST, capturados e renderizados na tela.</li>
-                <li>Salve os dados submetidos no formulário em um arquivo de texto. Você pode escolher o formato, porém sugerimos uso de yml </li>
-              </ol>
-              <br/>
-            <p class="lead"> 
-              <a href="/form" class="btn btn-lg btn-default">Cadastrar Bar</a>
-            </p>
-          </div>
+          <div class="content" style="margin-left: 20%">
+           <!-- 1º Desafio-->
+            <div class="col-md-4">
+              <!-- Button trigger modal -->
+              <a  data-toggle="modal" data-target="#edx">
+                  <button type="button" class="btn btn-primary btn-lg">1º Desafio Evolux </button>
+              </a>
 
-          <div class="mastfoot">
-            <div class="inner">
+              <!-- Modal -->
+              <div class="modal fade" id="edx" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #2F4F4F;">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                       <h1 class="cover-heading">1º Desafio Evolux.</h1> <bt/>
+                        <h4>Escrever uma aplicação web em Python usando o framework Flask (http://flask.pocoo.org/)</h4>
+                          <ol>
+                            <li>A aplicação é um cadastro de bares. Crie um formulário de cadastro com os seguintes campos: </li><br/>
+                              <blockquote style="text-align: left; font-size: 12px;">
+                                <p style="font-size: 14px;"> Nome do bar: <br/>
+                                Endereço: <br/>
+                                Horário de Abertura: <br/>
+                                Horário de Abertura: <br/>
+                                Especialidade da Casa: </p>
+                              </blockquote>
+                            <li>Ao submeter o formulário, os dados enviados pelo usuário devem ser submetidos via POST, capturados e renderizados na tela.</li>
+                            <li>Salve os dados submetidos no formulário em um arquivo de texto. Você pode escolher o formato, porém sugerimos uso de yml </li>
+                          </ol>
+                          <br/>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+              </div> 
             </div>
-          </div>
+           <!-- fim 1º desafio-->
 
-        </div>
+           <!-- 2º Desafio-->
+            <div class="col-md-4">
+              <!-- Button trigger modal -->
+              <a  data-toggle="modal" data-target="#segundo">
+                  <button type="button" class="btn btn-primary btn-lg">2º Desafio Evolux </button>
+              </a>
 
+              <!-- Modal -->
+              <div class="modal fade" id="segundo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #2F4F4F;">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                       <h1 class="cover-heading">2º Desafio Evolux.</h1> <bt/>
+                        <h4>1) Criar objeto Bar no banco de dados, utilizar o banco SQLite (http://flask.pocoo.org/docs/patterns/sqlite3/)</h4>
+                          <ol>
+                            <li>Bar consiste nos seguintes campos: </li><br/>
+                              <blockquote style="text-align: left; font-size: 12px;">
+                                <p style="font-size: 14px;"> Nome do bar: <br/>
+                                Descrição: <br/>
+                                Imagem (pode ser nulo) <br/>
+                                Endereço <br/>
+                                Especialidade <br/>
+                                Telefone </p>
+                              </blockquote>
+                            <li>Ao submeter o formulário, os dados enviados pelo usuário devem ser submetidos via POST, capturados e renderizados na tela.</li>
+                            <li>Salve os dados submetidos no formulário em um arquivo de texto. Você pode escolher o formato, porém sugerimos uso de yml </li>
+                          </ol>
+                          <br/>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+              </div> 
+            </div>
+           <!-- fim 1º desafio-->
+          <div>
       </div>
-
     </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../static/bootstrap.min.js"></script>
-    <script src="../static/docs.js"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='docs.js') }}"></script>
   </body>
 </html>
